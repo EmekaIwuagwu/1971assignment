@@ -87,21 +87,24 @@ There, you can interact with your API using the GraphQL Playground UI.
 ```graphql
         mutation {
         createPerson(input: {
-            fullname: "John Doe"
+            fullname: "Jane Doe"
             dateofbirth: "1990-01-01"
-            gender: "Male"
-            email: "john@example.com"
-            address: "123 Main St"
-            city: "New York"
-            zip: "10001"
-            telephone: "1234567890"
+            gender: "Female"
+            email: "jane@example.com"
+            address: "123 Street"
+            city: "Lagos"
+            zip: "100001"
+            telephone: "08012345678"
             occupation: "Engineer"
         }) {
+            message
+            data {
             id
             fullname
-            email
+            }
         }
-        }
+    }
+
 
 ```
 
@@ -109,14 +112,15 @@ There, you can interact with your API using the GraphQL Playground UI.
 ```graphql
         mutation {
         updatePerson(id: 1, input: {
-            fullname: "John Smith"
-            email: "johnsmith@example.com"
-            occupation: "Senior Engineer"
+            fullname: "John Doe Jr"
+            city: "Kampala"
         }) {
+            message
+            data {
             id
             fullname
-            email
-            occupation
+            city
+            }
         }
     }
 
@@ -125,21 +129,25 @@ There, you can interact with your API using the GraphQL Playground UI.
 ### ❌ Delete an Employee
 ```graphql
         mutation {
-        deletePerson(id: 1)
+        deletePerson(id: 1) {
+            message
+            success
+        }
     }
-
 ```
 
 ### 📄 Fetch All Employees
 ```graphql
-        query {
-        getUsers {
-            id
-            fullname
-            email
+            query {
+            persons {
+                message
+                data {
+                id
+                fullname
+                email
+                }
+            }
         }
-    }
-
 ```
 
 ---
