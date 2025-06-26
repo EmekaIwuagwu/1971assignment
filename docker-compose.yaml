@@ -17,9 +17,9 @@ services:
     container_name: postgres_db
     restart: always
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgrespassword
-      POSTGRES_DB: postgres
+      POSTGRES_USER: bircham_test_db_user
+      POSTGRES_PASSWORD: oR1OpAV8VemzojRnrXPqZcFGx2o7cg4s
+      POSTGRES_DB: bircham_test_db
     ports:
       - "5432:5432"
     volumes:
