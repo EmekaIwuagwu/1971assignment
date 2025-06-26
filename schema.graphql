@@ -1,5 +1,31 @@
+type PersonListResponse {
+  message: String!
+  data: [Person]!
+}
+
+type PersonResponse {
+  message: String!
+  data: Person
+}
+
+type DeleteResponse {
+  message: String!
+  success: Boolean!
+}
+
+type Query {
+  persons: PersonListResponse!
+  person(id: Int!): PersonResponse!
+}
+
+type Mutation {
+  createPerson(input: PersonInput!): PersonResponse!
+  updatePerson(id: Int!, input: PersonUpdateInput!): PersonResponse!
+  deletePerson(id: Int!): DeleteResponse!
+}
+
 type Person {
-  id: ID!
+  id: Int!
   fullname: String!
   dateofbirth: String!
   gender: String!
@@ -24,13 +50,15 @@ input PersonInput {
   occupation: String!
 }
 
-type Query {
-  persons: [Person!]!
-  person(id: ID!): Person
-}
 
-type Mutation {
-  createPerson(input: PersonInput!): Person!
-  updatePerson(id: ID!, input: PersonInput!): Person!
-  deletePerson(id: ID!): Boolean!
+input PersonUpdateInput {
+  fullname: String
+  dateofbirth: String
+  gender: String
+  email: String
+  address: String
+  city: String
+  zip: String
+  telephone: String
+  occupation: String
 }

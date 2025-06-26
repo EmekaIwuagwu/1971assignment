@@ -86,7 +86,7 @@ There, you can interact with your API using the GraphQL Playground UI.
 ### ✅ Create an Employee
 ```graphql
         mutation {
-        createUser(input: {
+        createPerson(input: {
             fullname: "John Doe"
             dateofbirth: "1990-01-01"
             gender: "Male"
@@ -108,7 +108,7 @@ There, you can interact with your API using the GraphQL Playground UI.
 ### 🔄 Update an Employee
 ```graphql
         mutation {
-        updateUser(id: 1, input: {
+        updatePerson(id: 1, input: {
             fullname: "John Smith"
             email: "johnsmith@example.com"
             occupation: "Senior Engineer"
@@ -125,7 +125,7 @@ There, you can interact with your API using the GraphQL Playground UI.
 ### ❌ Delete an Employee
 ```graphql
         mutation {
-        deleteUser(id: 1)
+        deletePerson(id: 1)
     }
 
 ```
